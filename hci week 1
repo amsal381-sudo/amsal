@@ -1,0 +1,23 @@
+<script>
+const canvas document.getElementById("gameCanvas");
+const ctx canvas.getContext("20");
+// Player Data
+const player (x: 275, у: 175, size: 50, color: "red", speed: 5);
+// 1. Key Press Interaction: Keep track of which keys are held down
+const keys();
+window.addEventListener("keydown", (e) keys[e.key]- true); window.addEventListener("keyup", (e) keys[e.key] false);
+function update() {
+// Move Player based on active keys
+if (keys["Arrowup"] || keys[]) player.y player.speed;
+if (keys["ArrowDown"] keys["s"]) player.y player.speed;
+If (keys["Arrowleft"] || keys["a"]) player.x player.speed;
+if (keys["ArrowRight"] || keys ["d"]) player.x player.speed;
+function render() {
+}
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+// Draw the player
+ctx.fill5tyle player.color, ctx.fillRect(player.x, player.y, player.size, player.size);
+update();
+requestAnimationFrame(render);
+render();
+/scripts
